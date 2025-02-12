@@ -4,6 +4,7 @@ import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyle } from '@/utils/globalStyle';
 import type { Metadata } from 'next';
 import { Space_Grotesk, Poppins } from 'next/font/google';
+import Head from 'next/head';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -18,8 +19,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Meu Site',
-  description: 'Um site incrível usando Next.js',
+  title: 'Sinapse HealthTech',
+  description: 'Software House Sinapse HealthTech',
 };
 
 export default function RootLayout({
@@ -32,6 +33,9 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${spaceGrotesk.variable} ${poppins.variable}`}
     >
+      <Head>
+        <link rel="icon" href="/favicon.ico" /> 
+      </Head>
       <body>
         <StyledComponentsRegistry>
           <GlobalStyle />
